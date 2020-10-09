@@ -18,10 +18,13 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
 </head>
-<body class="font-sans antialiased">
+<body class="bg-gray-100">
 
-{{ $helloworld }}
+<nav id="navbar" class="shadow">
+    {{ $navbar }}
+</nav>
 
+<script src="{{ asset('js/app.js') }}"></script>
 @livewireScripts
 </body>
 </html>
