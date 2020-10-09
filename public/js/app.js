@@ -19343,6 +19343,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./main */ "./resources/js/main.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19374,6 +19376,52 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Smooth scroll
+document.querySelectorAll('.js-scroll-trigger a[href^="#"]').forEach(function (trigger) {
+  trigger.onclick = function (e) {
+    e.preventDefault();
+    var hash = this.getAttribute('href');
+    var target = document.querySelector(hash);
+    var headerOffset = 100;
+    var elementPosition = target.offsetTop;
+    var offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  };
+}); //use window.scrollY
+
+var scrollpos = window.scrollY;
+var header = document.getElementById("navbar");
+
+function add_class_on_scroll() {
+  header.classList.add("bg-white", "shadow-lg");
+}
+
+function remove_class_on_scroll() {
+  header.classList.remove("bg-white", "shadow-lg");
+}
+
+window.addEventListener('scroll', function () {
+  scrollpos = window.scrollY;
+
+  if (scrollpos > 100) {
+    add_class_on_scroll();
+  } else {
+    remove_class_on_scroll();
+  }
+});
 
 /***/ }),
 
