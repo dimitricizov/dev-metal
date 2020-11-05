@@ -20,8 +20,11 @@
 </head>
 <body class="bg-gray-100">
 
-<nav id="navbar" class="shadow">
-    {{ $navbar }}
+<!-- Navbar -->
+<nav x-data="{ open: false }" class="body-font shadow-lg">
+    <div class="container text-gray-700 mx-auto sm:flex sm:items-center sm:justify-between sm:px-4 sm:py-3">
+        {{ $navbar }}
+    </div>
 </nav>
 
 <script src="{{ asset('js/app.js') }}"></script>
