@@ -12,6 +12,9 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 
+### Whole vscode folder
+.vscode/
+
 ### Whole idea folder
 .idea/
 
